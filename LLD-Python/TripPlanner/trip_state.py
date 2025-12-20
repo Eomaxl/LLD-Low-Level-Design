@@ -1,0 +1,8 @@
+from enum import Enum
+
+class TripState(Enum):
+    REQUESTED = "REQUESTED"
+    DRIVER_ASSIGNED = "DRIVER_ASSIGNED"
+    IN_PROGRESS = "IN_PROGRESS"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
