@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt", 
 	"errors"
+	"fmt"
 )
 
 type Carv2 struct {
@@ -12,7 +12,7 @@ type Carv2 struct {
 }
 
 // Constructor like method
-func NewCarv2(brand, model string) *Carv2{
+func NewCarv2(brand, model string) *Carv2 {
 	return &Carv2{
 		brand: brand,
 		model: model,
@@ -35,22 +35,21 @@ func (c *Carv2) Speed() int {
 }
 
 // Business Method
-func (c *Carv2) Accelerate(increment int) error{
+func (c *Carv2) Accelerate(increment int) error {
 	return c.SetSpeed(c.speed + increment)
 }
 
-
-func (c *Carv2) DisplayStatus(){
-	fmt.Printf("%s is running at %d km/h.\n",c.brand,c.speed)
+func (c *Carv2) DisplayStatus() {
+	fmt.Printf("%s is running at %d km/h.\n", c.brand, c.speed)
 }
 
-func main(){
-	car := Carv2("Suzuki","Baleno")
+func main() {
+	car := Carv2("Suzuki", "Baleno")
 	car.SetSpeed(50)
 	fmt.Printf(car.Speed())
 
 	err := car.SetSpeed(-10)
 	if err != nil {
-		fmt.Println("Error : ",err)
+		fmt.Println("Error : ", err)
 	}
 }
