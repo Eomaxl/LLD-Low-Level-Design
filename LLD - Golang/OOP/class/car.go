@@ -28,8 +28,8 @@ func (c *Car) DisplayStatus() {
 	fmt.Printf("%s is running at %d km/h.\n", c.brand, c.speed)
 }
 
-func main() {
-	car := NewCar("BMW", "X5")
-	car.Accelerate(50)
-	car.DisplayStatus()
-}
+// func main() {
+// 	car := NewCar("BMW", "X5")
+// 	car.Accelerate(50)
+// 	car.DisplayStatus()
+// }
