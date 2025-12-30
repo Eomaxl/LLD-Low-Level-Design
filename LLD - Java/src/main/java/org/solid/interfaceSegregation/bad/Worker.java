@@ -1,4 +1,4 @@
-package org.solid.liskovSubstitutionPrinciple.bad;
+package org.solid.interfaceSegregation.bad;
 
 public interface Worker {
     void work();

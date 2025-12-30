@@ -1,4 +1,4 @@
-package org.solid.liskovSubstitutionPrinciple.good;
+package org.solid.interfaceSegregation.good;
 
 public interface Feedable {
     void feed();
