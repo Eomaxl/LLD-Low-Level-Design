@@ -10,12 +10,13 @@ type EmailNotification struct{}
 
 func (EmailNotification) Send(message string) {
 	// Email sending logic goes here
+	fmt.Printf("From email end : %s", message)
 }
 
 type SMSNotification struct{}
 
 func (SMSNotification) Send(message string) {
-	// SMS sending logic here
+	fmt.Printf("From SMS end : %s", message)
 }
 
 func CreateNotification(notificationType string) (Notification, error) {
@@ -32,3 +33,8 @@ func CreateNotification(notificationType string) (Notification, error) {
 // Usage:
 // notif, _ := CreateNotification("email")
 // notif.Send("Hello")
+
+// func main() {
+// 	notif, _ := CreateNotification("email")
+// 	notif.Send("Hello")
+// }
