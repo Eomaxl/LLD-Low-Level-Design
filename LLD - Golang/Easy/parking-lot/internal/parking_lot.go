@@ -142,18 +142,18 @@ func (p *ParkingLot) Exit(ticketID string) (int64, error) {
 		return 0, ErrInvalidTicket
 	}
 
-	spot, ok := p.spotByID[ticket.spotId]
+	spot, ok := p.spotByID[ticket.spotID]
 	if !ok {
 		return 0, fmt.Errorf("%w: ticket references unknown spot", ErrInvalidConfig)
 	}
 
 	exitMs := p.clock.Now().UnixMilli()
 	rate := p.spotRatesCents[spot.spotType]
-	fee := calculateFeeCents(ticket.entryTimeMs, exitMs, rate)
+	fee := calculateFeeCents(ticket.entryTime, exitMs, rate)
 
 	// free spot + remove ticket
 	delete(p.activeTickets, ticketID)
-	delete(p.occupiedSpotIds, ticket.spotId)
+	delete(p.occupiedSpotIds, ticket.spotID)
 
 	return fee, nil
 }
